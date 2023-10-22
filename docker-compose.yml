@@ -1,0 +1,9 @@
+services:
+  nuxt-app:
+    build: .
+    container_name: nuxt-app
+    command: npm run dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
