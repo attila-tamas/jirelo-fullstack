@@ -1,0 +1,23 @@
+@use "../utils/functions" as f;
+
+$sizes: 12, 14, 16, 18, 20, 24, 30, 36, 48, 60, 72;
+$weights: ((null, 400), ("medium", 500), ("semibold", 600), ("bold", 700));
+
+@mixin font($size, $weight) {
+  font-size: f.pxToRem($size);
+  font-weight: $weight;
+}
+
+@each $size in $sizes {
+  @each $label, $weight in $weights {
+    @if $label {
+      .t-#{$size}-#{$label} {
+        @include font($size, $weight);
+      }
+    } @else {
+      .t-#{$size} {
+        @include font($size, $weight);
+      }
+    }
+  }
+}
