@@ -3,5 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   typescript: { shim: false },
   css: ["~/assets/css/main.scss"],
-  modules: ["@nuxtjs/fontaine"],
+  modules: ["@nuxtjs/eslint-module", "@nuxtjs/fontaine"],
+  eslint: { lintOnStart: false },
 });
