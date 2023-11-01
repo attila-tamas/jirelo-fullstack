@@ -1,17 +1,17 @@
 @use "sass:math" as math;
 
-@function pxToRem($pixel) {
+@function px-to-rem($pixel) {
   @if math.is-unitless($pixel) {
     @return math.div($pixel, 16) + rem;
   } @else {
-    @error "Don't use units when using the pxToRem() function; only numbers.";
+    @error "Don't use units when using the px-to-rem() function; only numbers.";
   }
 }
 
-@function pxToEm($pixel) {
+@function px-to-em($pixel) {
   @if math.is-unitless($pixel) {
     @return math.div($pixel, 16) + em;
   } @else {
-    @error "Don't use units when using the pxToEm() function; only numbers.";
+    @error "Don't use units when using the px-to-em() function; only numbers.";
   }
 }
