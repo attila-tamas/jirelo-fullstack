@@ -9,6 +9,5 @@ export default defineNuxtConfig({
       "postcss-preset-env": {},
     },
   },
-  modules: ["@nuxtjs/eslint-module", "@nuxtjs/fontaine"],
-  eslint: { lintOnStart: false },
+  modules: ["@nuxtjs/fontaine"],
 });
