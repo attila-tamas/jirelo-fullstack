@@ -29,7 +29,8 @@
     "stylelint-config-standard-vue": "^1.0.0",
     "vue": "^3.3.6",
     "vue-eslint-parser": "^9.3.2",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vuetify-nuxt-module": "^0.6.0"
   },
   "browserslist": [
     "defaults and fully supports es6-module",
