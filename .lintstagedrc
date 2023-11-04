@@ -1,6 +1,4 @@
 {
-  "**/*.ts": ["prettier --write", "eslint --fix"],
-  "**/*.vue": ["prettier --write", "eslint --fix", "stylelint --fix"],
-  "**/*.scss": ["prettier --write", "stylelint --fix"],
-  "**/*.(md|json)": "prettier --write"
+  "**/*.(vue|ts)": ["prettier --write", "eslint --fix"],
+  "**/*.(scss|md|json)": "prettier --write"
 }
