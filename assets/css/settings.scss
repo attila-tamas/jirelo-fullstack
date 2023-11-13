@@ -1,4 +1,6 @@
 @use "vuetify" with (
+  $color-pack: false,
+  $reset: false,
   $utilities: (
     "align-content": false,
     "align-items": false,
@@ -71,6 +73,5 @@
     "text-transform": false,
     "typography": false,
     "white-space": false,
-  ),
-  $color-pack: false
+  )
 );
