@@ -9,15 +9,22 @@ export default defineNuxtConfig({
       "postcss-preset-env": { features: { "nesting-rules": false } },
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "vuetify-nuxt-module"],
+  modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "vuetify-nuxt-module"],
   vuetify: {
-    vuetifyOptions: {
-      icons: false,
-    },
     moduleOptions: {
       styles: {
         configFile: "assets/css/settings.scss",
       },
+    },
+  },
+  image: {
+    screens: {
+      xs: 360,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
     },
   },
 });
