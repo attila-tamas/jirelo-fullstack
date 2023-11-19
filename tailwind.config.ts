@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { sharedColors } from "./constants/colors";
+import { screens_px, sharedColors } from "./constants";
 
 export default <Partial<Config>>{
   content: [
@@ -16,14 +16,7 @@ export default <Partial<Config>>{
     "./app.config.{js,ts}",
   ],
   theme: {
-    screens: {
-      xs: "360px",
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      xxl: "1536px",
-    },
+    screens: screens_px,
     extend: {
       colors: sharedColors,
     },
