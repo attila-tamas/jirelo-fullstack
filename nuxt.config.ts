@@ -11,7 +11,12 @@ export default defineNuxtConfig({
       "postcss-preset-env": { features: { "nesting-rules": false } },
     },
   },
-  modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "vuetify-nuxt-module"],
+  modules: [
+    "@formkit/auto-animate/nuxt",
+    "@nuxt/image",
+    "@nuxtjs/tailwindcss",
+    "vuetify-nuxt-module",
+  ],
   vuetify: {
     moduleOptions: {
       styles: {

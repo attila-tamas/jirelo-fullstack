@@ -11,32 +11,36 @@
       class="mx-auto p-8"
     >
       <header class="relative mb-8">
-        <v-tooltip
-          v-if="state === 1"
-          text="Return"
-          location="top"
-        >
-          <template #activator="{ props }">
-            <v-btn
-              density="compact"
-              icon="mdi-chevron-left"
-              variant="text"
-              class="!absolute bottom-[0.125rem] left-0"
-              aria-label="Return"
-              v-bind="props"
-              @click="state = 0"
-            />
-          </template>
-        </v-tooltip>
-        <h1 class="h-9 text-center text-2xl font-semibold">Create account</h1>
+        <AutoAnimate>
+          <v-tooltip
+            v-if="state === 1"
+            text="Return"
+            location="top"
+          >
+            <template #activator="{ props }">
+              <v-btn
+                density="compact"
+                icon="mdi-chevron-left"
+                variant="text"
+                class="!absolute bottom-[0.125rem] left-0"
+                aria-label="Return"
+                v-bind="props"
+                @click="state = 0"
+              />
+            </template>
+          </v-tooltip>
+          <h1 class="h-9 text-center text-2xl font-semibold">Create account</h1>
+        </AutoAnimate>
       </header>
 
       <main>
-        <RegistrationInitialForm
-          v-if="state === 0"
-          @submit="(s: number) => (state = s)"
-        />
-        <RegistrationMainForm v-else />
+        <AutoAnimate>
+          <RegistrationInitialForm
+            v-if="state === 0"
+            @submit="(s: number) => (state = s)"
+          />
+          <RegistrationMainForm v-else />
+        </AutoAnimate>
       </main>
 
       <footer class="mt-4 text-center">
