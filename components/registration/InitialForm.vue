@@ -11,6 +11,7 @@
         v-model="email"
         type="email"
         :rules="[rules.emailRequired, rules.emailValid]"
+        autofocus
         class="mt-1"
       />
     </label>

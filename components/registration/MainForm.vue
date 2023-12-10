@@ -11,6 +11,7 @@
         v-model="fullName"
         :readonly="isLoading"
         :rules="[rules.fullNameRequired]"
+        autofocus
         class="mt-1"
       />
     </label>
@@ -59,7 +60,7 @@
       class="mt-2"
     >
       <template #loader>
-        <ButtonLoader text="Creating account..." />
+        <ButtonLoader loading-text="Creating account..." />
       </template>
     </v-btn>
   </v-form>
