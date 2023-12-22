@@ -70,6 +70,8 @@ export const themeLight = {
   "neutral-900": COLORS.NEUTRAL_DARKEN_4,
   "neutral-950": COLORS.NEUTRAL_DARKEN_5,
 
+  background: COLORS.NEUTRAL_LIGHTEN_5,
+
   "on-surface-variant": COLORS.NEUTRAL_LIGHTEN_6,
 
   "input-bg": COLORS.TRANSPARENT,
