@@ -20,7 +20,7 @@
             <template #activator="{ props }">
               <v-btn
                 density="compact"
-                icon="mdi-chevron-left"
+                icon="i-mdi:chevron-left"
                 variant="text"
                 class="!absolute bottom-[0.125rem] left-0"
                 aria-label="Return"
