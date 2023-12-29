@@ -2,9 +2,11 @@ import { screens } from "./constants";
 
 export default defineNuxtConfig({
   telemetry: false,
-  experimental: { inlineSSRStyles: false },
   devtools: { enabled: true },
   typescript: { shim: false },
+  features: {
+    inlineStyles: false,
+  },
   css: ["~/assets/css/main.scss"],
   postcss: {
     plugins: {
