@@ -2,10 +2,9 @@
   <v-form
     v-model="form"
     class="flex flex-col gap-3"
-    @submit.prevent="onSubmit()"
   >
     <InputField
-      v-model:input-value="email"
+      v-model:value="store.email"
       label="Email address"
       type="email"
       autofocus
@@ -16,17 +15,12 @@
       type="submit"
       block
       class="mt-2"
+      @click="store.nextFormState()"
     />
   </v-form>
 </template>
 
 <script lang="ts" setup>
+  const store = useRegistrationStore();
   const form = ref(false);
-  const email = ref("");
-
-  const emit = defineEmits(["submit"]);
-
-  function onSubmit() {
-    emit("submit", 1);
-  }
 </script>

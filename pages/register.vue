@@ -1,5 +1,8 @@
 <template>
-  <v-container class="h-full">
+  <v-container
+    :class="{ 'bg-white': mobile }"
+    class="h-full"
+  >
     <header class="mx-auto mb-4 mt-8 w-fit">
       <FullLogo />
     </header>
@@ -7,13 +10,13 @@
     <v-sheet
       width="360"
       height="fit-content"
-      :elevation="mobile ? 0 : 2"
+      :elevation="elevation"
       class="mx-auto p-8"
     >
       <header class="relative mb-4">
         <AutoAnimate>
           <v-tooltip
-            v-if="state === 1"
+            v-if="!isFirstStep"
             text="Return"
             location="top"
           >
@@ -25,7 +28,7 @@
                 class="!absolute bottom-[0.125rem] left-0"
                 aria-label="Return"
                 v-bind="props"
-                @click="state = 0"
+                @click="store.previousFormState()"
               />
             </template>
           </v-tooltip>
@@ -35,10 +38,7 @@
 
       <main>
         <AutoAnimate>
-          <RegistrationInitialForm
-            v-if="state === 0"
-            @submit="(s: number) => (state = s)"
-          />
+          <RegistrationInitialForm v-if="isFirstStep" />
           <RegistrationMainForm v-else />
         </AutoAnimate>
       </main>
@@ -57,6 +57,18 @@
 </template>
 
 <script lang="ts" setup>
-  const state = ref(0);
+  const store = useRegistrationStore();
+
   const { mobile } = useDisplay();
+
+  const elevation = ref(codeTable.elevation.FLAT);
+  watch(mobile, (newValue) => {
+    elevation.value = newValue
+      ? codeTable.elevation.FLAT
+      : codeTable.elevation.DEFAULT;
+  });
+
+  const isFirstStep = computed(() => {
+    return store.formState === codeTable.registrationForm.STEP_ONE;
+  });
 </script>

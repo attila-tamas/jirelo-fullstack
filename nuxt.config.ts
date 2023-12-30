@@ -15,9 +15,10 @@ export default defineNuxtConfig({
   },
   modules: [
     "@formkit/auto-animate/nuxt",
-    "@unocss/nuxt",
     "@nuxt/image",
     "@nuxtjs/tailwindcss",
+    "@pinia/nuxt",
+    "@unocss/nuxt",
     "vuetify-nuxt-module",
   ],
   vuetify: {
