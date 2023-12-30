@@ -1,62 +1,42 @@
 <template>
   <v-form
     v-model="form"
-    validate-on="blur lazy"
-    class="flex flex-col gap-1"
+    :readonly="isLoading"
+    class="flex flex-col gap-3"
     @submit.prevent="onSubmit()"
   >
-    <label>
-      Full name
-      <v-text-field
-        v-model="fullName"
-        :readonly="isLoading"
-        :rules="[rules.fullNameRequired]"
-        autofocus
-        class="mt-1"
-      />
-    </label>
-    <label>
-      Username
-      <v-text-field
-        v-model="username"
-        :readonly="isLoading"
-        :rules="[rules.usernameReqiuired]"
-        class="mt-1"
-      />
-    </label>
-    <label>
-      Email address
-      <v-text-field
-        v-model="email"
-        :readonly="isLoading"
-        type="email"
-        :rules="[rules.emailRequired, rules.emailValid]"
-        class="mt-1"
-      >
-      </v-text-field>
-    </label>
-    <label>
-      Password
-      <v-text-field
-        v-model="password"
-        :readonly="isLoading"
-        :type="isPasswordVisible ? 'text' : 'password'"
-        :append-inner-icon="
-          isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'
-        "
-        :rules="[rules.passwordRequired]"
-        class="mt-1"
-        @click:append-inner="isPasswordVisible = !isPasswordVisible"
-      />
-    </label>
-
+    <InputField
+      v-model:input-value="fullName"
+      label="Full name"
+      type="text"
+      autofocus
+    />
+    <InputField
+      v-model:input-value="username"
+      label="Username"
+      type="text"
+    />
+    <InputField
+      v-model:input-value="email"
+      label="Email address"
+      type="email"
+    />
+    <InputField
+      v-model:input-value="password"
+      label="Password"
+      :type="isPasswordVisible ? 'text' : 'password'"
+      :append-inner-icon="
+        isPasswordVisible ? 'i-mdi:eye-off-outline' : 'i-mdi:eye-outline'
+      "
+      @append-inner-clicked="isPasswordVisible = !isPasswordVisible"
+    />
     <v-btn
       :disabled="isLoading"
       :loading="isLoading"
       text="Create account"
       color="primary-500"
-      block
       type="submit"
+      block
       class="mt-2"
     >
       <template #loader>
@@ -70,24 +50,14 @@
   const isPasswordVisible = ref(false);
 
   const form = ref(false);
-  const email = ref(null);
-  const password = ref(null);
-  const username = ref(null);
-  const fullName = ref(null);
-
-  const rules = ref({
-    fullNameRequired: requiredRule("Full name is required"),
-    usernameReqiuired: requiredRule("Username is required"),
-    emailRequired: requiredRule("Email is required"),
-    emailValid: emailRule("Invalid email"),
-    passwordRequired: requiredRule("Password is required"),
-  });
+  const email = ref("");
+  const password = ref("");
+  const username = ref("");
+  const fullName = ref("");
 
   const isLoading = ref(false);
 
   function onSubmit() {
-    if (!form.value) return;
-
     isLoading.value = true;
     setTimeout(() => (isLoading.value = false), 2000);
   }

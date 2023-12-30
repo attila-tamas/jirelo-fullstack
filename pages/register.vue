@@ -10,7 +10,7 @@
       :elevation="mobile ? 0 : 2"
       class="mx-auto p-8"
     >
-      <header class="relative mb-8">
+      <header class="relative mb-4">
         <AutoAnimate>
           <v-tooltip
             v-if="state === 1"
