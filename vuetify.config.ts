@@ -1,5 +1,5 @@
 import { defineVuetifyConfiguration } from "vuetify-nuxt-module/custom-configuration";
-import { screens, sharedColors, themeDark, themeLight } from "./constants";
+import { screens, sharedColors, themes } from "./constants";
 
 export default defineVuetifyConfiguration({
   theme: {
@@ -9,14 +9,14 @@ export default defineVuetifyConfiguration({
         dark: false,
         colors: {
           ...sharedColors,
-          ...themeLight,
+          ...themes.themeLight,
         },
       },
       dark: {
         dark: true,
         colors: {
           ...sharedColors,
-          ...themeDark,
+          ...themes.themeDark,
         },
       },
     },

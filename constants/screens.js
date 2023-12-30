@@ -1,4 +1,4 @@
-export const screens = {
+const screens = {
   xs: 0,
   sm: 360,
   md: 540,
@@ -7,13 +7,13 @@ export const screens = {
   xxl: 1536,
 };
 
-const UNIT = "px";
-
-export const screens_px = {
-  xs: screens.xs + UNIT,
-  sm: screens.sm + UNIT,
-  md: screens.md + UNIT,
-  lg: screens.lg + UNIT,
-  xl: screens.xl + UNIT,
-  xxl: screens.xxl + UNIT,
+const screens_px = {
+  xs: screens.xs + "px",
+  sm: screens.sm + "px",
+  md: screens.md + "px",
+  lg: screens.lg + "px",
+  xl: screens.xl + "px",
+  xxl: screens.xxl + "px",
 };
+
+export { screens, screens_px };
