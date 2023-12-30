@@ -22,6 +22,10 @@ export default defineVuetifyConfiguration({
     },
   },
   defaults: {
+    VAlert: {
+      variant: "outlined",
+      style: "border: none; font-size: 0.875rem; padding-block: 0.25rem;",
+    },
     VBtn: {
       size: "large",
       style: "font-weight: 600; text-transform: none;",
