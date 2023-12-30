@@ -22,13 +22,9 @@
       type="email"
     />
     <InputField
-      v-model:input-value="password"
+      v-model:value="password"
       label="Password"
-      :type="isPasswordVisible ? 'text' : 'password'"
-      :append-inner-icon="
-        isPasswordVisible ? 'i-mdi:eye-off-outline' : 'i-mdi:eye-outline'
-      "
-      @append-inner-clicked="isPasswordVisible = !isPasswordVisible"
+      type="password"
     />
     <v-btn
       :disabled="isLoading"

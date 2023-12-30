@@ -2,18 +2,18 @@
   <label>
     {{ props.label }}
     <v-text-field
-      v-model="inputValue"
+      v-model="value"
       :autofocus="props.autofocus"
-      :append-inner-icon="props.appendInnerIcon"
+      :append-inner-icon="getAppendInnerIcon()"
       :readonly="props.readonly"
-      :type="props.type"
+      :type="type"
       hide-details
       :class="{ 'mt-1': props.label }"
       @focus="isFocused = true"
       @blur="isFocused = false"
-      @keydown.enter="isFocused && onSuggestionAccepted()"
-      @click:append-inner="emit('appendInnerClicked')"
-      @update:model-value="isTypeEmail && emailSpellCheck()"
+      @keydown.enter="onKeydownEnter()"
+      @click:append-inner="onAppendInnerClicked()"
+      @update:model-value="onModelValueUpdated()"
     />
     <InputSuggestion
       :suggestion="suggestion"
@@ -49,24 +49,51 @@
     },
   });
 
-  const emit = defineEmits(["appendInnerClicked"]);
-
-  const inputValue = defineModel<string>("inputValue");
+  const value = defineModel<string>("value");
 
   const suggestion = ref("");
   const isFocused = ref(false);
+  const isPasswordVisible = ref(false);
+  const type = ref(props.type);
 
   const isTypeEmail = computed(() => {
     return props.type === "email";
   });
+  const isTypePassword = computed(() => {
+    return props.type === "password";
+  });
 
+  function getAppendInnerIcon() {
+    if (props.type === "password") {
+      return isPasswordVisible.value
+        ? "i-mdi:eye-off-outline"
+        : "i-mdi:eye-outline";
+    }
+    return props.appendInnerIcon;
+  }
+
+  function onModelValueUpdated() {
+    if (isTypeEmail) emailSpellCheck();
+  }
   function emailSpellCheck() {
-    const emailSuggestion = emailSpellChecker(inputValue.value);
+    const emailSuggestion = emailSpellChecker(value.value);
     if (emailSuggestion) suggestion.value = emailSuggestion;
     else suggestion.value = "";
   }
+
+  function onAppendInnerClicked() {
+    if (isTypePassword) togglePasswordVisiblity();
+  }
+  function togglePasswordVisiblity() {
+    isPasswordVisible.value = !isPasswordVisible.value;
+    type.value = isPasswordVisible.value ? "text" : "password";
+  }
+
+  function onKeydownEnter() {
+    if (suggestion.value && isFocused.value) onSuggestionAccepted();
+  }
   function onSuggestionAccepted() {
-    inputValue.value = suggestion.value;
+    value.value = suggestion.value;
     suggestion.value = "";
   }
 </script>
