@@ -9,7 +9,7 @@
       type="email"
       autofocus
     />
-    <v-btn
+    <VButton
       text="Continue"
       color="primary-500"
       type="submit"

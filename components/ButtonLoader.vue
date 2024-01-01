@@ -4,14 +4,14 @@
     :size="props.progressSize"
     :width="props.progressWidth"
   />
-  &nbsp; {{ props.loadingText }}
+  <span v-if="props.loadingText"> &nbsp; {{ props.loadingText }} </span>
 </template>
 
 <script lang="ts" setup>
   const props = defineProps({
     loadingText: {
       type: String,
-      required: true,
+      default: undefined,
     },
     progressSize: {
       type: Number,
@@ -19,7 +19,7 @@
     },
     progressWidth: {
       type: Number,
-      default: 3,
+      default: 4,
     },
   });
 </script>

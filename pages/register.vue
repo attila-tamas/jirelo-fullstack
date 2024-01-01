@@ -21,7 +21,7 @@
             location="top"
           >
             <template #activator="{ props }">
-              <v-btn
+              <VButton
                 density="compact"
                 icon="i-mdi:chevron-left"
                 variant="text"

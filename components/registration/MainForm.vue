@@ -26,19 +26,16 @@
       label="Password"
       type="password"
     />
-    <v-btn
+    <VButton
       :disabled="store.isLoading"
       :loading="store.isLoading"
       text="Create account"
+      loading-text="Creating account..."
       color="primary-500"
       type="submit"
       block
       class="mt-2"
-    >
-      <template #loader>
-        <ButtonLoader loading-text="Creating account..." />
-      </template>
-    </v-btn>
+    />
   </v-form>
 </template>
 
