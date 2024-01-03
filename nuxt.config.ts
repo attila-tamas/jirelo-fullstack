@@ -4,9 +4,7 @@ export default defineNuxtConfig({
   telemetry: false,
   devtools: { enabled: true },
   typescript: { shim: false },
-  features: {
-    inlineStyles: false,
-  },
+  features: { inlineStyles: false },
   css: ["~/assets/css/main.scss"],
   postcss: {
     plugins: {

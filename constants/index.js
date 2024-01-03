@@ -1,2 +1,2 @@
 export { screens, screens_px } from "./screens";
-export { sharedColors, themes } from "./themes";
+export { sharedColors, tailwindColors, themes } from "./themes";

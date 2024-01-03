@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { screens_px, sharedColors } from "./constants";
+import { screens_px, tailwindColors } from "./constants";
 
 export default <Partial<Config>>{
   content: [
@@ -10,7 +10,7 @@ export default <Partial<Config>>{
   theme: {
     screens: screens_px,
     extend: {
-      colors: sharedColors,
+      colors: tailwindColors,
     },
   },
 };
