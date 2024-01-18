@@ -1,9 +1,10 @@
 import { defineVuetifyConfiguration } from "vuetify-nuxt-module/custom-configuration";
 import { screens, sharedColors, themes } from "./constants";
+import codeTable from "./utils/codeTable";
 
 export default defineVuetifyConfiguration({
   theme: {
-    defaultTheme: "light",
+    defaultTheme: codeTable.theme.LIGHT,
     themes: {
       light: {
         dark: false,
@@ -39,8 +40,7 @@ export default defineVuetifyConfiguration({
       rounded: true,
     },
     VTextField: {
-      baseColor: "neutral-400",
-      bgColor: "input-bg",
+      baseColor: "input-bg",
       color: "primary-500",
       clearIcon: "mdi-window-close",
       density: "compact",

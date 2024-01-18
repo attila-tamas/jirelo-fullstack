@@ -1,35 +1,20 @@
 const misc = {
-  TRANSPARENT: "#ffffff00",
-  WHITE: "#fafafa",
+  WHITE: "#fdfdfd",
   BLACK: "#0a0a0a",
 };
 
-const lightThemeNeutralShades = {
-  L_NEUTRAL_LIGHTEN_5: "#f9fafb",
-  L_NEUTRAL_LIGHTEN_4: "#f3f4f6",
-  L_NEUTRAL_LIGHTEN_3: "#e5e7eb",
-  L_NEUTRAL_LIGHTEN_2: "#d1d5db",
-  L_NEUTRAL_LIGHTEN_1: "#9ca3af",
-  L_NEUTRAL_BASE: "#6b7280",
-  L_NEUTRAL_DARKEN_1: "#4b5563",
-  L_NEUTRAL_DARKEN_2: "#374151",
-  L_NEUTRAL_DARKEN_3: "#1f2937",
-  L_NEUTRAL_DARKEN_4: "#111827",
-  L_NEUTRAL_DARKEN_5: "#030712",
-};
-
-const darkThemeNeutralShades = {
-  D_NEUTRAL_LIGHTEN_5: "#f8fafc",
-  D_NEUTRAL_LIGHTEN_4: "#f1f5f9",
-  D_NEUTRAL_LIGHTEN_3: "#e2e8f0",
-  D_NEUTRAL_LIGHTEN_2: "#cbd5e1",
-  D_NEUTRAL_LIGHTEN_1: "#94a3b8",
-  D_NEUTRAL_BASE: "#64748b",
-  D_NEUTRAL_DARKEN_1: "#475569",
-  D_NEUTRAL_DARKEN_2: "#334155",
-  D_NEUTRAL_DARKEN_3: "#1e293b",
-  D_NEUTRAL_DARKEN_4: "#0f172a",
-  D_NEUTRAL_DARKEN_5: "#020617",
+const neutralShades = {
+  NEUTRAL_LIGHTEN_5: "#f9fafb",
+  NEUTRAL_LIGHTEN_4: "#f3f4f6",
+  NEUTRAL_LIGHTEN_3: "#e5e7eb",
+  NEUTRAL_LIGHTEN_2: "#d1d5db",
+  NEUTRAL_LIGHTEN_1: "#9ca3af",
+  NEUTRAL_BASE: "#6b7280",
+  NEUTRAL_DARKEN_1: "#4b5563",
+  NEUTRAL_DARKEN_2: "#374151",
+  NEUTRAL_DARKEN_3: "#1f2937",
+  NEUTRAL_DARKEN_4: "#111827",
+  NEUTRAL_DARKEN_5: "#030712",
 };
 
 const primaryShades = {
@@ -84,8 +69,7 @@ const redShades = {
 
 export const COLORS = {
   ...misc,
-  ...lightThemeNeutralShades,
-  ...darkThemeNeutralShades,
+  ...neutralShades,
   ...primaryShades,
   ...accentShades,
   ...greenShades,

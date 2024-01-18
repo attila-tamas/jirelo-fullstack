@@ -4,9 +4,7 @@ export default defineNuxtConfig({
   telemetry: false,
   devtools: { enabled: true },
   typescript: { shim: false },
-  features: {
-    inlineStyles: false,
-  },
+  features: { inlineStyles: false },
   css: ["~/assets/css/main.scss"],
   postcss: {
     plugins: {
@@ -15,6 +13,7 @@ export default defineNuxtConfig({
   },
   modules: [
     "@formkit/auto-animate/nuxt",
+    "@nuxtjs/color-mode",
     "@nuxt/image",
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
@@ -35,5 +34,8 @@ export default defineNuxtConfig({
   },
   image: {
     screens: screens,
+  },
+  colorMode: {
+    classSuffix: "",
   },
 });

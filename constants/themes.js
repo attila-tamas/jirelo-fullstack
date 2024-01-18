@@ -1,52 +1,29 @@
 import { COLORS } from "./colors";
 
 const themeLight = {
-  // light (0) -> dark (950)
-  "neutral-0": COLORS.WHITE,
-  "neutral-50": COLORS.L_NEUTRAL_LIGHTEN_5,
-  "neutral-100": COLORS.L_NEUTRAL_LIGHTEN_4,
-  "neutral-200": COLORS.L_NEUTRAL_LIGHTEN_3,
-  "neutral-300": COLORS.L_NEUTRAL_LIGHTEN_2,
-  "neutral-400": COLORS.L_NEUTRAL_LIGHTEN_1,
-  "neutral-500": COLORS.L_NEUTRAL_BASE,
-  "neutral-600": COLORS.L_NEUTRAL_DARKEN_1,
-  "neutral-700": COLORS.L_NEUTRAL_DARKEN_2,
-  "neutral-800": COLORS.L_NEUTRAL_DARKEN_3,
-  "neutral-900": COLORS.L_NEUTRAL_DARKEN_4,
-  "neutral-950": COLORS.L_NEUTRAL_DARKEN_5,
+  background: COLORS.NEUTRAL_LIGHTEN_4,
+  "on-background": COLORS.BLACK,
 
-  background: COLORS.L_NEUTRAL_LIGHTEN_5,
+  surface: COLORS.NEUTRAL_LIGHTEN_5,
+  "on-surface": COLORS.BLACK,
 
-  "on-surface-variant": COLORS.L_NEUTRAL_LIGHTEN_6,
+  "surface-variant": COLORS.NEUTRAL_DARKEN_4,
+  "on-surface-variant": COLORS.WHITE,
 
-  "input-bg": COLORS.TRANSPARENT,
+  "input-bg": COLORS.NEUTRAL_DARKEN_1,
 };
 
 const themeDark = {
-  // dark (50) -> light (950)
-  "neutral-0": COLORS.BLACK,
-  "neutral-50": COLORS.D_NEUTRAL_DARKEN_5,
-  "neutral-100": COLORS.D_NEUTRAL_DARKEN_4,
-  "neutral-200": COLORS.D_NEUTRAL_DARKEN_3,
-  "neutral-300": COLORS.D_NEUTRAL_DARKEN_2,
-  "neutral-500": COLORS.D_NEUTRAL_BASE,
-  "neutral-400": COLORS.D_NEUTRAL_DARKEN_1,
-  "neutral-600": COLORS.D_NEUTRAL_LIGHTEN_1,
-  "neutral-700": COLORS.D_NEUTRAL_LIGHTEN_2,
-  "neutral-800": COLORS.D_NEUTRAL_LIGHTEN_3,
-  "neutral-900": COLORS.D_NEUTRAL_LIGHTEN_4,
-  "neutral-950": COLORS.D_NEUTRAL_LIGHTEN_5,
+  background: COLORS.NEUTRAL_DARKEN_4,
+  "on-background": COLORS.NEUTRAL_LIGHTEN_5,
 
-  background: COLORS.D_NEUTRAL_DARKEN_4,
-  "on-background": COLORS.D_NEUTRAL_LIGHTEN_5,
+  surface: COLORS.NEUTRAL_DARKEN_3,
+  "on-surface": COLORS.NEUTRAL_LIGHTEN_5,
 
-  surface: COLORS.D_NEUTRAL_DARKEN_3,
-  "on-surface": COLORS.D_NEUTRAL_LIGHTEN_5,
+  "surface-variant": COLORS.NEUTRAL_LIGHTEN_3,
+  "on-surface-variant": COLORS.NEUTRAL_DARKEN_5,
 
-  "surface-variant": COLORS.D_NEUTRAL_LIGHTEN_3,
-  "on-surface-variant": COLORS.D_NEUTRAL_DARKEN_5,
-
-  "input-bg": COLORS.D_NEUTRAL_DARKEN_2,
+  "input-bg": COLORS.NEUTRAL_LIGHTEN_1,
 };
 
 export const themes = {
@@ -55,7 +32,19 @@ export const themes = {
 };
 
 export const sharedColors = {
-  transparent: COLORS.TRANSPARENT,
+  "neutral-0": COLORS.WHITE,
+  "neutral-50": COLORS.NEUTRAL_LIGHTEN_5,
+  "neutral-100": COLORS.NEUTRAL_LIGHTEN_4,
+  "neutral-200": COLORS.NEUTRAL_LIGHTEN_3,
+  "neutral-300": COLORS.NEUTRAL_LIGHTEN_2,
+  "neutral-400": COLORS.NEUTRAL_LIGHTEN_1,
+  "neutral-500": COLORS.NEUTRAL_BASE,
+  "neutral-600": COLORS.NEUTRAL_DARKEN_1,
+  "neutral-700": COLORS.NEUTRAL_DARKEN_2,
+  "neutral-800": COLORS.NEUTRAL_DARKEN_3,
+  "neutral-900": COLORS.NEUTRAL_DARKEN_4,
+  "neutral-950": COLORS.NEUTRAL_DARKEN_5,
+  "neutral-1000": COLORS.BLACK,
 
   "primary-200": COLORS.PRIMARY_LIGHTEN_3,
   "primary-300": COLORS.PRIMARY_LIGHTEN_2,

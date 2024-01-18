@@ -1,8 +1,7 @@
 <template>
-  <v-container
-    :class="{ 'bg-white': mobile }"
-    class="h-full"
-  >
+  <v-container class="h-full">
+    <ThemeToggle class="absolute right-3 top-3" />
+
     <header class="mx-auto mb-4 mt-8 w-fit">
       <FullLogo />
     </header>
@@ -11,7 +10,7 @@
       width="360"
       height="fit-content"
       :elevation="elevation"
-      class="mx-auto p-8"
+      :class="['mx-auto', 'p-8', { 'bg-background': mobile }]"
     >
       <header class="relative mb-4">
         <AutoAnimate>
