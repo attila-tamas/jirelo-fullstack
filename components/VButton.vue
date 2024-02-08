@@ -3,6 +3,7 @@
     v-bind="$attrs"
     :color="color"
     :loading="loading"
+    :variant="variant"
   >
     <template #loader>
       <ButtonLoader :loading-text="props.loadingText" />
@@ -24,6 +25,27 @@
       type: String,
       default: undefined,
     },
+    variant: {
+      type: String,
+      default: "primary",
+      validator(value: string) {
+        return ["primary", "secondary", "tertiary"].includes(value);
+      },
+    },
+  });
+
+  const variant = computed(() => {
+    switch (props.variant) {
+      case "secondary":
+        return "outlined";
+
+      case "tertiary":
+        return "text";
+
+      default:
+      case "primary":
+        return "elevated";
+    }
   });
 
   const color = computed(() => {
