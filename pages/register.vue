@@ -1,16 +1,15 @@
 <template>
-  <v-container class="h-full">
-    <ThemeToggle class="absolute right-3 top-3" />
-
+  <PageContainer :class="{ '!bg-neutral-50': mobile }">
     <header class="mx-auto mb-4 mt-8 w-fit">
       <FullLogo />
     </header>
 
-    <v-sheet
+    <SimpleSheet
       width="360"
       height="fit-content"
       :elevation="elevation"
-      :class="['mx-auto', 'p-8', { 'bg-background': mobile }]"
+      class="mx-auto"
+      :class="{ 'dark:!bg-neutral-900': mobile }"
     >
       <header class="relative mb-4">
         <AutoAnimate>
@@ -23,11 +22,11 @@
               <VButton
                 density="compact"
                 icon="i-mdi:chevron-left"
-                variant="text"
+                variant="tertiary"
                 class="!absolute bottom-[0.125rem] left-0"
                 aria-label="Return"
                 v-bind="props"
-                @click="store.previousFormState()"
+                @click="registrationStore.previousFormState()"
               />
             </template>
           </v-tooltip>
@@ -44,19 +43,17 @@
 
       <footer class="mt-4 text-center">
         <span> I have an account. </span>
-        <NuxtLink
+        <NavLink
           to="/"
-          class="font-semibold hover:border-b-2 hover:border-primary-500"
-        >
-          Sign in
-        </NuxtLink>
+          label="Sign in"
+        />
       </footer>
-    </v-sheet>
-  </v-container>
+    </SimpleSheet>
+  </PageContainer>
 </template>
 
 <script lang="ts" setup>
-  const store = useRegistrationStore();
+  const registrationStore = useRegistrationStore();
 
   const { mobile } = useDisplay();
 
@@ -68,6 +65,6 @@
   });
 
   const isFirstStep = computed(() => {
-    return store.formState === codeTable.registrationForm.STEP_ONE;
+    return registrationStore.formState === codeTable.registrationForm.STEP_ONE;
   });
 </script>
