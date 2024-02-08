@@ -4,7 +4,7 @@
     class="flex flex-col gap-3"
   >
     <InputField
-      v-model:value="store.email"
+      v-model:value="registrationStore.email"
       label="Email address"
       type="email"
       autofocus
@@ -15,12 +15,12 @@
       type="submit"
       block
       class="mt-2"
-      @click="store.nextFormState()"
+      @click="registrationStore.nextFormState()"
     />
   </v-form>
 </template>
 
 <script lang="ts" setup>
-  const store = useRegistrationStore();
+  const registrationStore = useRegistrationStore();
   const form = ref(false);
 </script>

@@ -1,34 +1,34 @@
 <template>
   <v-form
     v-model="form"
-    :readonly="store.isLoading"
+    :readonly="registrationStore.isLoading"
     class="flex flex-col gap-3"
     @submit.prevent="onSubmit()"
   >
     <InputField
-      v-model:value="store.fullName"
+      v-model:value="registrationStore.fullName"
       label="Full name"
       type="text"
       autofocus
     />
     <InputField
-      v-model:value="store.username"
+      v-model:value="registrationStore.username"
       label="Username"
       type="text"
     />
     <InputField
-      v-model:value="store.email"
+      v-model:value="registrationStore.email"
       label="Email address"
       type="email"
     />
     <InputField
-      v-model:value="store.password"
+      v-model:value="registrationStore.password"
       label="Password"
       type="password"
     />
     <VButton
-      :disabled="store.isLoading"
-      :loading="store.isLoading"
+      :disabled="registrationStore.isLoading"
+      :loading="registrationStore.isLoading"
       text="Create account"
       loading-text="Creating account..."
       color="primary-500"
@@ -40,12 +40,12 @@
 </template>
 
 <script lang="ts" setup>
-  const store = useRegistrationStore();
+  const registrationStore = useRegistrationStore();
 
   const form = ref(false);
 
   function onSubmit() {
-    store.isLoading = true;
-    setTimeout(() => (store.isLoading = false), 2000);
+    registrationStore.isLoading = true;
+    setTimeout(() => (registrationStore.isLoading = false), 2000);
   }
 </script>
