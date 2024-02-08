@@ -19,7 +19,7 @@
     },
     progressWidth: {
       type: Number,
-      default: 4,
+      default: 3,
     },
   });
 </script>
