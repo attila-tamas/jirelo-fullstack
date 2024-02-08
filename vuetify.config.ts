@@ -1,23 +1,28 @@
 import { defineVuetifyConfiguration } from "vuetify-nuxt-module/custom-configuration";
-import { screens, sharedColors, themes } from "./constants";
-import codeTable from "./utils/codeTable";
+import { colors_vuetify, screens, themes_vuetify } from "./constants";
 
 export default defineVuetifyConfiguration({
+  display: {
+    mobileBreakpoint: "xs",
+    thresholds: {
+      ...screens,
+    },
+  },
   theme: {
-    defaultTheme: codeTable.theme.LIGHT,
+    defaultTheme: "light",
     themes: {
       light: {
         dark: false,
         colors: {
-          ...sharedColors,
-          ...themes.themeLight,
+          ...colors_vuetify,
+          ...themes_vuetify.light,
         },
       },
       dark: {
         dark: true,
         colors: {
-          ...sharedColors,
-          ...themes.themeDark,
+          ...colors_vuetify,
+          ...themes_vuetify.dark,
         },
       },
     },
@@ -51,9 +56,5 @@ export default defineVuetifyConfiguration({
     VTooltip: {
       contentClass: "font-medium",
     },
-  },
-  display: {
-    mobileBreakpoint: "sm",
-    thresholds: screens,
   },
 });

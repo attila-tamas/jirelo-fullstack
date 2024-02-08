@@ -1,2 +1,2 @@
 export { screens, screens_px } from "./screens";
-export { sharedColors, themes } from "./themes";
+export { colors_tailwind, colors_vuetify, themes_vuetify } from "./themes";

@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { screens_px, sharedColors } from "./constants";
+import { colors_tailwind, screens_px } from "./constants";
 
 export default <Partial<Config>>{
   darkMode: "class",
@@ -9,9 +9,11 @@ export default <Partial<Config>>{
     "./pages/**/*.vue",
   ],
   theme: {
-    screens: screens_px,
-    extend: {
-      colors: sharedColors,
+    screens: {
+      ...screens_px,
+    },
+    colors: {
+      ...colors_tailwind,
     },
   },
 };

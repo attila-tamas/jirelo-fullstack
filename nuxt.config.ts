@@ -33,7 +33,9 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    screens: screens,
+    screens: {
+      ...screens,
+    },
   },
   colorMode: {
     classSuffix: "",

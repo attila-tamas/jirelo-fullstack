@@ -1,19 +1,20 @@
 const screens = {
-  xs: 0,
-  sm: 360,
-  md: 540,
-  lg: 800,
+  xs: 360,
+  sm: 640,
+  md: 768,
+  lg: 1024,
   xl: 1280,
   xxl: 1536,
 };
 
+const unit = "px";
 const screens_px = {
-  xs: screens.xs + "px",
-  sm: screens.sm + "px",
-  md: screens.md + "px",
-  lg: screens.lg + "px",
-  xl: screens.xl + "px",
-  xxl: screens.xxl + "px",
+  xs: screens.xs + unit,
+  sm: screens.sm + unit,
+  md: screens.md + unit,
+  lg: screens.lg + unit,
+  xl: screens.xl + unit,
+  xxl: screens.xxl + unit,
 };
 
 export { screens, screens_px };

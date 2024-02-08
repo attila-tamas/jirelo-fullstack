@@ -1,6 +1,6 @@
 import { COLORS } from "./colors";
 
-const themeLight = {
+const light = {
   background: COLORS.NEUTRAL_LIGHTEN_4,
   "on-background": COLORS.BLACK,
 
@@ -13,7 +13,7 @@ const themeLight = {
   "input-bg": COLORS.NEUTRAL_DARKEN_1,
 };
 
-const themeDark = {
+const dark = {
   background: COLORS.NEUTRAL_DARKEN_4,
   "on-background": COLORS.NEUTRAL_LIGHTEN_5,
 
@@ -26,12 +26,12 @@ const themeDark = {
   "input-bg": COLORS.NEUTRAL_LIGHTEN_1,
 };
 
-export const themes = {
-  themeLight,
-  themeDark,
+export const themes_vuetify = {
+  light,
+  dark,
 };
 
-export const sharedColors = {
+export const colors_vuetify = {
   "neutral-0": COLORS.WHITE,
   "neutral-50": COLORS.NEUTRAL_LIGHTEN_5,
   "neutral-100": COLORS.NEUTRAL_LIGHTEN_4,
@@ -85,4 +85,67 @@ export const sharedColors = {
   "destructive-600": COLORS.RED_DARKEN_1,
   "destructive-700": COLORS.RED_DARKEN_2,
   "destructive-800": COLORS.RED_DARKEN_3,
+};
+
+export const colors_tailwind = {
+  black: COLORS.BLACK,
+  white: COLORS.WHITE,
+  neutral: {
+    50: COLORS.NEUTRAL_LIGHTEN_5,
+    100: COLORS.NEUTRAL_LIGHTEN_4,
+    200: COLORS.NEUTRAL_LIGHTEN_3,
+    300: COLORS.NEUTRAL_LIGHTEN_2,
+    400: COLORS.NEUTRAL_LIGHTEN_1,
+    500: COLORS.NEUTRAL_BASE,
+    600: COLORS.NEUTRAL_DARKEN_1,
+    700: COLORS.NEUTRAL_DARKEN_2,
+    800: COLORS.NEUTRAL_DARKEN_3,
+    900: COLORS.NEUTRAL_DARKEN_4,
+    950: COLORS.NEUTRAL_DARKEN_5,
+  },
+  primary: {
+    200: COLORS.PRIMARY_LIGHTEN_3,
+    300: COLORS.PRIMARY_LIGHTEN_2,
+    400: COLORS.PRIMARY_LIGHTEN_1,
+    500: COLORS.PRIMARY_BASE,
+    600: COLORS.PRIMARY_DARKEN_1,
+    700: COLORS.PRIMARY_DARKEN_2,
+    800: COLORS.PRIMARY_DARKEN_3,
+  },
+  accent: {
+    200: COLORS.ACCENT_LIGHTEN_3,
+    300: COLORS.ACCENT_LIGHTEN_2,
+    400: COLORS.ACCENT_LIGHTEN_1,
+    500: COLORS.ACCENT_BASE,
+    600: COLORS.ACCENT_DARKEN_1,
+    700: COLORS.ACCENT_DARKEN_2,
+    800: COLORS.ACCENT_DARKEN_3,
+  },
+  positive: {
+    200: COLORS.GREEN_LIGHTEN_3,
+    300: COLORS.GREEN_LIGHTEN_2,
+    400: COLORS.GREEN_LIGHTEN_1,
+    500: COLORS.GREEN_BASE,
+    600: COLORS.GREEN_DARKEN_1,
+    700: COLORS.GREEN_DARKEN_2,
+    800: COLORS.GREEN_DARKEN_3,
+  },
+  warning: {
+    200: COLORS.YELLOW_LIGHTEN_3,
+    300: COLORS.YELLOW_LIGHTEN_2,
+    400: COLORS.YELLOW_LIGHTEN_1,
+    500: COLORS.YELLOW_BASE,
+    600: COLORS.YELLOW_DARKEN_1,
+    700: COLORS.YELLOW_DARKEN_2,
+    800: COLORS.YELLOW_DARKEN_3,
+  },
+  destructive: {
+    200: COLORS.RED_LIGHTEN_3,
+    300: COLORS.RED_LIGHTEN_2,
+    400: COLORS.RED_LIGHTEN_1,
+    500: COLORS.RED_BASE,
+    600: COLORS.RED_DARKEN_1,
+    700: COLORS.RED_DARKEN_2,
+    800: COLORS.RED_DARKEN_3,
+  },
 };
