@@ -4,7 +4,7 @@
     <v-text-field
       v-model="value"
       :autofocus="props.autofocus"
-      :append-inner-icon="getAppendInnerIcon()"
+      :append-inner-icon="appendInnerIcon"
       :readonly="props.readonly"
       :type="type"
       hide-details
@@ -62,15 +62,14 @@
   const isTypePassword = computed(() => {
     return props.type === "password";
   });
-
-  function getAppendInnerIcon() {
+  const appendInnerIcon = computed(() => {
     if (props.type === "password") {
       return isPasswordVisible.value
         ? "i-mdi:eye-off-outline"
         : "i-mdi:eye-outline";
     }
     return props.appendInnerIcon;
-  }
+  });
 
   function onModelValueUpdated() {
     if (isTypeEmail) emailSpellCheck();
