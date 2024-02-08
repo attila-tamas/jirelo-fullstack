@@ -7,7 +7,7 @@
       <section class="break-all">
         <span>Did you mean </span>
         <span
-          class="underline hover:cursor-pointer hover:text-neutral-950"
+          class="underline hover:cursor-pointer hover:font-bold"
           @click="emit('suggestionAccepted')"
         >
           {{ props.suggestion }}
