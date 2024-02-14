@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@formkit/auto-animate": "^0.8.1",
@@ -24,9 +24,9 @@
     "@zootools/email-spell-checker": "^1.12.0",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "lint-staged": "^15.0.2",
-    "nuxt": "^3.9.3",
+    "nuxt": "^3.10.2",
     "pinia": "^2.1.7",
     "postcss-preset-env": "^9.3.0",
     "prettier": "^3.2.4",
