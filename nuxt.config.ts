@@ -15,11 +15,20 @@ export default defineNuxtConfig({
     "@formkit/auto-animate/nuxt",
     "@nuxtjs/color-mode",
     "@nuxt/image",
+    "@nuxtjs/supabase",
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
     "@unocss/nuxt",
     "vuetify-nuxt-module",
   ],
+  colorMode: {
+    classSuffix: "",
+  },
+  image: {
+    screens: {
+      ...screens,
+    },
+  },
   vuetify: {
     moduleOptions: {
       styles: {
@@ -31,13 +40,5 @@ export default defineNuxtConfig({
         defaultSet: "unocss-mdi",
       },
     },
-  },
-  image: {
-    screens: {
-      ...screens,
-    },
-  },
-  colorMode: {
-    classSuffix: "",
   },
 });
