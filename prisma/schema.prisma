@@ -1,20 +1,18 @@
-generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["multiSchema"]
+generator kysely {
+  provider = "prisma-kysely"
 }
 
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
-  schemas   = ["public", "auth"]
 }
 
-model User {
-  id       Int    @id @default(autoincrement())
+model Profile {
+  id       String @id @db.Uuid()
   email    String @unique
   name     String
-  username String
+  username String @unique
 
-  @@schema("auth")
+  @@map("profiles")
 }

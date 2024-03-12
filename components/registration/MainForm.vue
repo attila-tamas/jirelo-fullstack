@@ -46,6 +46,25 @@
 
   function onSubmit() {
     registrationStore.isLoading = true;
-    setTimeout(() => (registrationStore.isLoading = false), 2000);
+    setTimeout(() => {
+      createUser();
+      registrationStore.isLoading = false;
+    }, 2000);
+  }
+
+  const client = useSupabaseClient();
+  async function createUser() {
+    const { data, error } = await client.auth.signUp({
+      email: registrationStore.email,
+      password: registrationStore.password,
+      options: {
+        data: {
+          name: registrationStore.fullName,
+          username: registrationStore.username,
+        },
+      },
+    });
+    console.log({ data });
+    if (error) console.log({ error });
   }
 </script>
