@@ -2,16 +2,15 @@
   <label>
     {{ props.label }}
     <v-text-field
+      v-bind="$attrs"
       v-model="value"
-      :autofocus="props.autofocus"
       :append-inner-icon="appendInnerIcon"
-      :readonly="props.readonly"
       :type="type"
       hide-details
       :class="{ 'mt-1': props.label }"
       @focus="isFocused = true"
       @blur="isFocused = false"
-      @keydown.enter="onKeydownEnter()"
+      @keydown.enter="onKeydownEnter"
       @click:append-inner="onAppendInnerClicked()"
       @update:model-value="onModelValueUpdated()"
     />
@@ -24,10 +23,6 @@
 
 <script lang="ts" setup>
   const props = defineProps({
-    autofocus: {
-      type: Boolean,
-      default: false,
-    },
     appendInnerIcon: {
       type: String,
       default: undefined,
@@ -35,10 +30,6 @@
     label: {
       type: String,
       default: "",
-    },
-    readonly: {
-      type: Boolean,
-      default: false,
     },
     type: {
       type: String,
@@ -88,8 +79,11 @@
     type.value = isPasswordVisible.value ? "text" : "password";
   }
 
-  function onKeydownEnter() {
-    if (suggestion.value && isFocused.value) onSuggestionAccepted();
+  function onKeydownEnter(event: Event) {
+    if (suggestion.value && isFocused.value) {
+      event.preventDefault();
+      onSuggestionAccepted();
+    }
   }
   function onSuggestionAccepted() {
     value.value = suggestion.value;
